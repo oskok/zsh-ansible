@@ -13,9 +13,9 @@
 
 if type python3 >/dev/null; then
     for package in "${PACKAGES[@]}"; do
-      echo "==> Fetching ${package}"
+      $(which python3) -m pip install --upgrade pip
       $(which python3) -m pip install --upgrade ${package} --user
-      rehash && echo
+      rehash
     done
   fi
 }
