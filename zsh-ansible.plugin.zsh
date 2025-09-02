@@ -3,7 +3,7 @@
 # =============================================================================
 
 _zsh_package_pip() {
-  $(which python3) -m pip install --upgrade pip --user &>/dev/null
+  $(which python3) -m pip install --upgrade pip --user
   rehash
 }
 
@@ -22,7 +22,7 @@ _zsh_package_ansible() {
     )
 
   for package in "${PACKAGES[@]}"; do
-    $(which python3) -m pip install --upgrade ${package} --user &>/dev/null
+    $(which python3) -m pip install --upgrade ${package} --user
     rehash
   done
 }
