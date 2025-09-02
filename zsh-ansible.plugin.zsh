@@ -2,12 +2,12 @@
 #   ZSH ANSIBLE PLUGIN
 # =============================================================================
 
-_zsh_package_pip {
+_zsh_package_pip() {
   $(which python3) -m pip install --upgrade pip --user
   rehash
 }
 
-_zsh_package_ansible {
+_zsh_package_ansible() {
     typeset -r PACKAGES=(
       'ansible'
       'ansible-lint'
