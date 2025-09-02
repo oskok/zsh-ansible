@@ -31,7 +31,7 @@ _zsh_package_ansible() {
 # Вызов установки в фоне
 if type python3 >/dev/null; then
   # setopt LOCAL_OPTIONS NO_NOTIFY NO_MONITOR
-  _zsh_package_ansible &
+  _zsh_package_ansible
   # disown &>/dev/null
 fi
 
