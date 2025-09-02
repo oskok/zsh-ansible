@@ -28,10 +28,10 @@ _zsh_package_ansible() {
 }
 
 if type python3 >/dev/null; then
-  # setopt LOCAL_OPTIONS NO_NOTIFY NO_MONITOR
+  setopt LOCAL_OPTIONS NO_NOTIFY NO_MONITOR
   _zsh_package_pip
   _zsh_package_ansible
-  # disown &>/dev/null
+  disown &>/dev/null
 fi
 
 if type molecule >/dev/null; then
