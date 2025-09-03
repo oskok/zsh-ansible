@@ -19,7 +19,7 @@ _zsh_package_ansible() {
   )
 
   # Устанавливаем или обновляем PIP до актуальной версии
-  if ! type ansible; then
+  if ! type ansible >/dev/null; then
     $(which python3) -m pip install --upgrade pip --user
   else
     $(which python3) -m pip install --upgrade pip --user > /dev/null 2>&1 &
@@ -27,7 +27,7 @@ _zsh_package_ansible() {
 
   # Устанавливаем или обновляем ANSIBLE и его дополнения
   for package in "${PACKAGES[@]}"; do
-    if ! type ansible; then
+    if ! type ansible >/dev/null; then
       $(which python3) -m pip install --upgrade ${package} --user
     else
       $(which python3) -m pip install --upgrade ${package} --user > /dev/null 2>&1 &
