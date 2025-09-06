@@ -15,7 +15,7 @@ _zsh_package_ansible() {
     'hvac'
     'dnspython'
     'jmespath'
-    'urllib3'
+    'urllib3<2.0'
   )
 
   # Устанавливаем или обновляем PIP до актуальной версии
