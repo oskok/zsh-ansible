@@ -37,7 +37,6 @@ _zsh_package_ansible() {
 
   if type ansible-galaxy >/dev/null; then
     ansible-galaxy collection install community.docker --force > /dev/null 2>&1 &
-    ansible-galaxy collection install community.postgresql --force > /dev/null 2>&1 &
   fi
 }
 
