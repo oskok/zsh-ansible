@@ -14,6 +14,7 @@ _zsh_package_ansible() {
     'tox-ansible'
     'hvac'
     'dnspython'
+    'netaddr'
     'jmespath'
     'urllib3<2.0'
   )
@@ -26,13 +27,11 @@ _zsh_package_ansible() {
   fi
 
   # Устанавливаем или обновляем ANSIBLE и его дополнения
-  for package in "${PACKAGES[@]}"; do
-    if ! type ansible >/dev/null; then
-      $(which python3) -m pip install --upgrade ${package} --user
-    else
-      $(which python3) -m pip install --upgrade ${package} --user > /dev/null 2>&1 &
-    fi
-  done
+  if ! type ansible >/dev/null; then
+    $(which python3) -m pip install --upgrade ${package} --user
+  else
+    $(which python3) -m pip install --upgrade ${package} --user > /dev/null 2>&1 &
+  fi
   rehash
 
   if type ansible-galaxy >/dev/null; then
