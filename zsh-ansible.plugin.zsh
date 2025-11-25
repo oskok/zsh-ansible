@@ -9,7 +9,7 @@ _zsh_package_ansible() {
     'ansible'
     'ansible-lint'
     'molecule'
-    'molecule-docker'
+    'molecule-plugins'
     'tox'
     'tox-ansible'
     'hvac'
